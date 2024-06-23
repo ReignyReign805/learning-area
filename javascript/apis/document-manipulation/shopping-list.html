@@ -31,7 +31,29 @@
     </ul>
 
     <script>
+      const var1 = document.querySelector('ul');
+      const var2 = document.querySelector('input');
+      const var3 = document.querySelector('button');
 
+      var3.addEventListener('click', () => {
+        const currentItem = var2.value;
+        var2.value = "";
+
+        const ali = document.createElement('li');
+        const aspan = document.createElement('span');
+        const abtn = document.createElement('button');
+
+        ali.appendChild(aspan);
+        ali.appendChild(abtn);
+        aspan.textContent = currentItem;
+        abtn.textContent = 'Delete';
+        var1.appendChild(ali);
+
+        abtn.addEventListener('click', () => {
+          var1.removeChild(ali);
+        })
+        input.focus();
+      })
     </script>
   </body>
 </html>
